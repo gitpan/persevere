@@ -1,0 +1,6 @@
+: GET http://localhost:7080/Class/
+: POST http://localhost:7080/Class/ {"useUUIDs":true,"sourceClass":"org.persvr.datasource.InMemorySource","id":"TestStore","extends":{"$ref":"Object"},"properties":{"value":{"index":true,"type":"string","optional":false},"position":{"index":true,"type":"integer","optional":true}}}
+: PUT http://localhost:7080/TestStore/ {"value":"test1","position":11,"id":"item1"}
+: GET http://localhost:7080/TestStore/?value="test1"
+: PUT http://localhost:7080/TestStore/ {"position":"5","id":"item5"}
+: GET http://localhost:7080/Class/
